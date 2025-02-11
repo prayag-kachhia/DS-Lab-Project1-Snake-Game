@@ -1,52 +1,86 @@
-# DS-Lab-Project1-Snake-Game
-# Snake Game in C++
+Snake Game (C++ Console Version)
 
-## Overview
-This is a simple **Snake Game** implemented in C++ using the **console** for rendering. The game utilizes **Windows API functions** to enhance console manipulation, preventing screen flickering for a smooth gameplay experience.
+A simple Snake Game implemented in C++ using Windows API for console manipulation. The game features smooth rendering with minimal flickering, user-controlled snake movement, and a dynamically growing snake upon eating food.
 
-## Features
-- **Classic Snake Mechanics**: Move the snake to eat food and grow.
-- **Smooth Console Rendering**: Uses `GotoXY` and `HideCursor` functions to minimize flickering.
-- **Dynamic Speed**: Snake speed increases as you level up.
-- **Collision Handling**: Ends game if the snake collides with itself or the wall.
-- **Score & Level System**: Earn points and level up after every 50 points.
+Features
 
-## Controls
-- `W` - Move Up
-- `S` - Move Down
-- `A` - Move Left
-- `D` - Move Right
-- `X` - Exit Game
+🐍 Smooth snake movement with no flickering
 
-## How It Works
-1. The snake starts in the middle of the screen.
-2. Move the snake to eat food (`*`), which increases the score and length.
-3. Avoid colliding with walls or yourself.
-4. The game speeds up as you level up.
-5. The game ends when the snake crashes.
+🍎 Random food generation avoiding collisions with the snake
 
-## Dependencies
-- **Windows OS** (Due to use of `<windows.h>`, `_kbhit()`, `_getch()`)
-- **C++ Compiler** (MinGW/GCC recommended for Windows users)
+⌨ Keyboard controls for movement
 
-## Compilation & Execution
-1. Open terminal/cmd in the directory containing `Lab2.cpp`.
-2. Compile using:
-   ```sh
-   g++ Lab2.cpp -o snake_game.exe
-   ```
+🏆 Score tracking
+
+❌ Game over on self-collision or wall collision
+
+
+Requirements
+
+Windows OS (Uses windows.h)
+
+C++ compiler (G++ or Clang with Windows support)
+
+
+Installation & Compilation
+
+1. Clone this repository or copy the source code:
+
+git clone https://github.com/your-repo/snake-game.git
+cd snake-game
+
+
+2. Compile the code using G++:
+
+g++ snake_game.cpp -o snake.exe
+
+
 3. Run the executable:
-   ```sh
-   snake_game.exe
-   ```
 
-## Notes
-- Uses `Sleep()` to control game speed.
-- Random food placement ensures it does not overlap with the snake.
-- Uses vector `snake` to store body positions dynamically.
+./snake.exe
 
-## Author
-- **Your Name** (Modify this as needed)
 
-Enjoy the game! 🐍🎮
 
+Controls
+
+How to Play
+
+Move the snake using WASD keys
+
+Eat food (*) to increase score and grow the snake
+
+Avoid colliding with walls or your own tail
+
+Press X to quit the game
+
+
+Code Structure
+
+The game is encapsulated in the SnakeGame class for better maintainability:
+
+Setup() – Initializes game variables and settings
+
+Draw() – Renders the game board efficiently
+
+Input() – Reads player input without blocking
+
+Logic() – Handles movement, collision detection, and food mechanics
+
+Run() – Main game loop
+
+
+Upcoming Features (TODO)
+
+🔄 Enable Wrap-Around Mode (Snake can pass through walls)
+
+🎨 Customizable Game Speed & Themes
+
+🎵 Sound Effects on Food & Game Over
+
+
+License
+
+This project is open-source and available under the MIT License.
+
+
+---
