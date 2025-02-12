@@ -6,6 +6,7 @@
 using namespace std;
 
 const int width = 30, height = 20;
+int Highscore = 0;
 
 class SnakeGame {
 private:
@@ -71,7 +72,10 @@ private:
         }
 
         for (int i = 0; i < width + 2; i++) cout << "# ";
-        cout << "\nScore: " << score << endl;
+        cout << "\nScore: " << score; // << endl;
+        GotoXY(0,height+4);
+        cout << "                                    \r";
+        GotoXY(0,height+3);
     }
 
     void Input() {
@@ -143,12 +147,17 @@ public:
             Logic();
             Sleep(100);
         }
-        cout << "\nGame Over! Final Score: " << score << endl;
+        if (Highscore < score) Highscore = score;   
+        cout << "High score: "<< Highscore << endl;
+        cout << "Game Over! Final Score: " << score << endl;
     }
 };
 
 int main() {
-    SnakeGame game;
-    game.Run();
+    while (1) {
+        SnakeGame game;
+        game.Run();
+        Sleep(5000);
+    }
     return 0;
 }
