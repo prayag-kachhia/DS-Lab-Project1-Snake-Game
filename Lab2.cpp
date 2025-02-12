@@ -148,8 +148,8 @@ public:
             Sleep(100);
         }
         if (Highscore < score) Highscore = score;   
-        cout << "High score: "<< Highscore << endl;
-        cout << "Game Over! Final Score: " << score << endl;
+        cout << "High score: "<< Highscore << "     "<< endl;
+        cout << "Game Over! Final Score: " << score << "      " <<endl;
     }
 };
 
